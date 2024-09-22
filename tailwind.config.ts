@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-import { nextui } from "@nextui-org/react";
 const svgToDataUri = require("mini-svg-data-uri");
 
 const {
@@ -35,9 +34,6 @@ const config: Config = {
   },
  
   plugins: [
-    // Plugin de NextUI
-    nextui(),
-    
     // Mantienes tu plugin para las variables de color
     addVariablesForColors,
     

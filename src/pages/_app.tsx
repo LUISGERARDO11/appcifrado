@@ -1,6 +1,15 @@
+// _app.tsx
 import "@/styles/globals.css";
-import type { AppProps } from "next/app";
+import { Providers } from "./providers";
+import { AppProps } from "next/app";
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+
+function App({ Component, pageProps }: AppProps) {
+  return (
+    <Providers>
+      <Component {...pageProps} />
+    </Providers>
+  );
 }
+
+export default App;

@@ -38,22 +38,23 @@ const CifradoEscitala = () => {
   };
 
   // Función para descifrar corregida
-  const decryptEscitala = (message: string, rows: number, columns: number): string => {
-    let decrypted = new Array(message.length);
-    let charIndex = 0;
-
-    // Colocar los caracteres en una matriz en base a las filas y columnas
-    for (let col = 0; col < columns; col++) {
-      for (let row = 0; row < rows; row++) {
-        const index = row * columns + col;
-        if (index < message.length) {
-          decrypted[index] = message[charIndex++];
+    const decryptEscitala = (message: string, rows: number, columns: number): string => {
+        const decrypted = new Array(message.length); // Cambiado a 'const'
+        let charIndex = 0;
+    
+        // Colocar los caracteres en una matriz en base a las filas y columnas
+        for (let col = 0; col < columns; col++) {
+        for (let row = 0; row < rows; row++) {
+            const index = row * columns + col;
+            if (index < message.length) {
+            decrypted[index] = message[charIndex++];
+            }
         }
-      }
-    }
-
-    return decrypted.join('');
-  };
+        }
+    
+        return decrypted.join('');
+    };
+  
 
   const handleInfoClick = () => {
     alert("El número de columnas determina cómo se organiza el mensaje para el cifrado.");

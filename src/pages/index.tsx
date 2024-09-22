@@ -1,10 +1,6 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
 import { AuroraBackgroundDemo } from '../components/AuroraBackgroundDemo';
 import CifradoCesar from "@/components/CifradoCesar";
 import CifradoEscitala from "@/components/CifradoEscitala";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (

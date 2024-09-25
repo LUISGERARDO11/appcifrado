@@ -1,13 +1,15 @@
 import { AuroraBackgroundDemo } from '../components/AuroraBackgroundDemo';
 import CifradoCesar from "@/components/CifradoCesar";
 import CifradoEscitala from "@/components/CifradoEscitala";
-
+import {ExpandableCardDemo} from '@/components/ExpandableCardsDemo';
 export default function Home() {
   return (
     <div>
       <AuroraBackgroundDemo />
+      <ExpandableCardDemo/>
       <CifradoCesar />
       <CifradoEscitala />
+     
 
       {/* Footer */}
       <footer className="bg-gray-200 dark:bg-gray-800 text-center py-6 pt-8">

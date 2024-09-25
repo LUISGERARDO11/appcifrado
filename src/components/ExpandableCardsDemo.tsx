@@ -119,7 +119,7 @@ export function ExpandableCardDemo() {
         ) : null}
       </AnimatePresence>
       <ul className="max-w-2xl mx-auto w-full gap-4">
-        {cards.map((card, index) => (
+        {cards.map((card) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
             key={`card-${card.title}-${id}`}
@@ -207,11 +207,11 @@ const cards = [
     content: () => {
       return (
         <p>
-          El cifrado César es un tipo de cifrado por sustitución en el cual cada
-          letra de un texto se desplaza un número fijo de posiciones en el
-          alfabeto. Por ejemplo, con un desplazamiento de 3, "A" se convierte en
-          "D", "B" en "E", y así sucesivamente. Es uno de los métodos de
-          cifrado más antiguos y simples.
+            El cifrado César es un tipo de cifrado por sustitución en el cual cada
+            letra de un texto se desplaza un número fijo de posiciones en el
+            alfabeto. Por ejemplo, con un desplazamiento de 3, &quot;A&quot; se convierte en
+            &quot;D&quot;, &quot;B&quot; en &quot;E&quot;, y así sucesivamente. Es uno de los métodos de
+            cifrado más antiguos y simples.
         </p>
       );
     },

@@ -26,7 +26,7 @@ const DummyContent = () => {
       >
         <p className="text-neutral-600 my-4 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
           El cifrado César es uno de los métodos de cifrado por sustitución más antiguos, utilizado por Julio César para enviar mensajes confidenciales a sus generales. Consiste en desplazar cada letra del texto original un número fijo de posiciones en el alfabeto.
-          "Por ejemplo, si usamos un desplazamiento de 3, la letra &quot;A&quot; se convierte en &quot;D&quot;, &quot;B&quot; en &quot;E&quot; y así sucesivamente."
+          Por ejemplo, si usamos un desplazamiento de 3, la letra &quot;A&quot; se convierte en &quot;D&quot;, &quot;B&quot; en &quot;E&quot; y así sucesivamente.
         </p>
         <Image
           src="/imgcesar1.png"
@@ -64,7 +64,7 @@ const DummyContent = () => {
     return (
       <div className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4">
         <p className="text-neutral-600 my-4 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
-          El cifrado Escítala es un antiguo método de transposición utilizado por los griegos y espartanos para transmitir mensajes de manera segura. Este cifrado se basa en una herramienta física: una varilla o cilindro llamado "escítala", en la que se enrolla una tira de cuero o pergamino con el mensaje escrito de forma continua. Al desenrollar la tira, el mensaje quedaba ilegible a menos que se volviera a enrollar en una escítala del mismo diámetro.
+          El cifrado Escítala es un antiguo método de transposición utilizado por los griegos y espartanos para transmitir mensajes de manera segura. Este cifrado se basa en una herramienta física: una varilla o cilindro llamado &quot;escítala&quot;, en la que se enrolla una tira de cuero o pergamino con el mensaje escrito de forma continua. Al desenrollar la tira, el mensaje quedaba ilegible a menos que se volviera a enrollar en una escítala del mismo diámetro.
         </p>
         <Image
           src="/imgescitala1.jpg"

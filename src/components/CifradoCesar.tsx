@@ -5,7 +5,6 @@ import Textarea from './comun/TextArea';
 import BotonSubmit from './comun/BotonSubmit ';
 import Resultado from './comun/Resultado';
 
-
 const CifradoCesar = () => {
   const [isEncrypting, setIsEncrypting] = useState(true);
   const [shift, setShift] = useState(5);
@@ -31,21 +30,39 @@ const CifradoCesar = () => {
   const isTextEmpty = text.trim().length === 0;
 
   return (
-    <div className=" bg-[#e3e7e7] dark:bg-black min-h-screen py-8">  
-        <div className="font-extralight text-center text-2xl md:text-4xl dark:text-neutral-200 py-4">
-            Cifrado César
-        </div>
-        <div className="p-4 bg-blue-100 dark:bg-blue-800 md:dark:bg-blue-950 rounded-md text-center dark:text-neutral-200 md:w-4/5 lg:w-6/10 mx-auto">
-            <p>
-                Selecciona si deseas cifrar o descifrar el mensaje. Luego ajusta el desplazamiento con el slider e ingresa tu mensaje.
-            </p>
+    <div className="min-h-screen py-4 flex justify-center items-center">
+      {/* Contenedor principal que actúa como la "card" con fondo aplicado */}
+      <div className="relative bg-white dark:bg-[#0a0e1a] rounded-lg shadow-lg max-w-4xl w-full">
+        <div className="font-extralight text-center text-2xl md:text-4xl dark:text-neutral-200 py-4 relative z-10">
+          Cifrado César
         </div>
 
-        <Switch onChange={setIsEncrypting} />
-        <Slider value={shift} onChange={setShift} />
-        <Textarea value={text} onChange={setText} />
-        <BotonSubmit isEncrypting={isEncrypting} onSubmit={handleSubmit} disabled={isTextEmpty} /> 
-        <Resultado value={result} />
+        <div className="p-4 bg-blue-100 dark:bg-blue-800 md:dark:bg-blue-950 rounded-md text-center dark:text-neutral-200 relative z-10 w-full">
+          <p>
+            Selecciona si deseas cifrar o descifrar el mensaje. Luego ajusta el desplazamiento con el slider e ingresa tu mensaje.
+          </p>
+        </div>
+
+        <div className="my-4 relative z-10 w-full">
+          <Switch onChange={setIsEncrypting} />
+        </div>
+
+        <div className="my-4 relative z-10 w-full">
+          <Slider value={shift} onChange={setShift} />
+        </div>
+
+        <div className="my-4 relative z-10 w-full">
+          <Textarea value={text} onChange={setText} />
+        </div>
+
+        <div className="my-4 relative z-10 w-full">
+          <BotonSubmit isEncrypting={isEncrypting} onSubmit={handleSubmit} disabled={isTextEmpty} /> 
+        </div>
+
+        <div className="my-4 relative z-10 w-full">
+          <Resultado value={result} />
+        </div>
+      </div>
     </div>
   );
 };

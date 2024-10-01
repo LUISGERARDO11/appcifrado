@@ -12,7 +12,6 @@ const CifradoEscitala = () => {
   const [result, setResult] = useState('');
 
   const handleSubmit = () => {
-    // Eliminar espacios del texto antes de cifrar o descifrar
     const cleanText = text.replace(/\s+/g, '');
     const numRows = Math.ceil(cleanText.length / columns);
 
@@ -23,7 +22,6 @@ const CifradoEscitala = () => {
     setResult(processedText);
   };
 
-  // Función para cifrar considerando espacios eliminados
   const encryptEscitala = (message: string, rows: number, columns: number): string => {
     let encrypted = '';
     for (let col = 0; col < columns; col++) {
@@ -37,53 +35,57 @@ const CifradoEscitala = () => {
     return encrypted;
   };
 
-  // Función para descifrar corregida
-    const decryptEscitala = (message: string, rows: number, columns: number): string => {
-        const decrypted = new Array(message.length); // Cambiado a 'const'
-        let charIndex = 0;
-    
-        // Colocar los caracteres en una matriz en base a las filas y columnas
-        for (let col = 0; col < columns; col++) {
-        for (let row = 0; row < rows; row++) {
-            const index = row * columns + col;
-            if (index < message.length) {
-            decrypted[index] = message[charIndex++];
-            }
-        }
-        }
-    
-        return decrypted.join('');
-    };
-  
+  const decryptEscitala = (message: string, rows: number, columns: number): string => {
+    const decrypted = new Array(message.length);
+    let charIndex = 0;
 
-  const handleInfoClick = () => {
-    alert("El número de columnas determina cómo se organiza el mensaje para el cifrado.");
+    for (let col = 0; col < columns; col++) {
+      for (let row = 0; row < rows; row++) {
+        const index = row * columns + col;
+        if (index < message.length) {
+          decrypted[index] = message[charIndex++];
+        }
+      }
+    }
+    return decrypted.join('');
   };
 
-  // Validaciones para el input de columnas y el mensaje
+  const handleInfoClick = () => {
+    alert('El número de columnas determina cómo se organiza el mensaje para el cifrado.');
+  };
+
   const isTextEmpty = text.trim().length === 0;
   const isColumnInvalid = columns < 1 || columns > text.replace(/\s+/g, '').length;
 
   return (
-    <div className="bg-[#e3e7e7] dark:bg-black min-h-screen py-10">
+    <div className="bg-white py-4 dark:bg-[#0a0e1a] min-h-screen flex justify-center items-center">
+      <div className="relative bg-white dark:bg-[#0a0e1a] rounded-lg shadow-lg  max-w-4xl w-full">
         <div className="font-extralight text-center text-2xl md:text-4xl dark:text-neutral-200 py-4">
-            Cifrado Escítala
-        </div>
-        <div className="p-4 bg-blue-100 dark:bg-blue-800 md:dark:bg-blue-950 rounded-md text-center dark:text-neutral-200 md:w-4/5 lg:w-6/10 mx-auto">
-            <p>
-                Selecciona si deseas cifrar o descifrar el mensaje. Luego ingresa tu mensaje y número de columnas.
-            </p>
+          Cifrado Escítala
         </div>
 
-        <Switch onChange={setIsEncrypting} />
-        <Textarea value={text} onChange={setText} />
-        <div className="flex flex-col items-center mt-4 mx-auto w-4/5 md:w-7/10 lg:w-3/5">
-            <label htmlFor="columns" className="text-lg font-medium dark:text-neutral-200 text-left w-full flex items-center">
+        <div className="p-4 bg-blue-100 dark:bg-blue-800 md:dark:bg-blue-950 rounded-md text-center dark:text-neutral-200">
+          <p>
+            Selecciona si deseas cifrar o descifrar el mensaje. Luego ingresa tu mensaje y número de columnas.
+          </p>
+        </div>
+
+        <div className="my-4">
+          <Switch onChange={setIsEncrypting} />
+        </div>
+
+        <div className="my-4">
+          <Textarea value={text} onChange={setText} />
+        </div>
+
+        {/* Ajustes de tamaño y centrado del div */}
+        <div className="flex flex-col items-center mt-4 w-full sm:w-4/5 lg:w-3/5 mx-auto">
+            <label htmlFor="columns" className="text-lg font-medium dark:text-neutral-200 w-full flex items-center">
                 Número de Columnas
                 <FaInfoCircle
-                    className="ml-2 text-gray-500 cursor-pointer"
-                    onClick={handleInfoClick}
-                    title="El número de columnas determina cómo se organiza el mensaje para el cifrado y descifrado."
+                className="ml-2 text-gray-500 cursor-pointer"
+                onClick={handleInfoClick}
+                title="El número de columnas determina cómo se organiza el mensaje para el cifrado y descifrado."
                 />
             </label>
             <input
@@ -101,12 +103,20 @@ const CifradoEscitala = () => {
                 </p>
             )}
         </div>
-        <BotonSubmit
+
+
+        <div className="my-4">
+          <BotonSubmit
             isEncrypting={isEncrypting}
             onSubmit={handleSubmit}
             disabled={isTextEmpty || isColumnInvalid}
-        />
-        <Resultado value={result} />
+          />
+        </div>
+
+        <div className="my-4">
+          <Resultado value={result} />
+        </div>
+      </div>
     </div>
   );
 };

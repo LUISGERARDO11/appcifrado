@@ -17,7 +17,7 @@ export function AuroraBackgroundDemo() {
         }}
         className="relative flex flex-col gap-4 items-center justify-center px-4"
       >
-        <div className="text-5xl md:text-7xl font-bold dark:text-white text-center">
+        <div className="text-6xl md:text-8xl font-bold dark:text-white text-center">
         Descubre la Criptografía
         </div>
         <div className="font-extralight  text-center md:text-3xl dark:text-neutral-200 py-4">

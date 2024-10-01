@@ -2,19 +2,19 @@ import React, { useState } from 'react';
 import { FaCopy } from 'react-icons/fa';
 
 interface ResultadoProps {
-  value: string;
+  value: string | null; // Permitir que value sea null
 }
 
 const Resultado: React.FC<ResultadoProps> = ({ value }) => {
   const [showPopup, setShowPopup] = useState(false);
 
   const handleCopy = () => {
-    if (value.trim() !== '') {
+    if (value && value.trim() !== '') {
       navigator.clipboard.writeText(value);
       setShowPopup(true);
       setTimeout(() => {
         setShowPopup(false);
-      }, 3000); // Popup desaparece después de 4 segundos
+      }, 3000); // Popup desaparece después de 3 segundos
     }
   };
 
@@ -28,18 +28,24 @@ const Resultado: React.FC<ResultadoProps> = ({ value }) => {
           Resultado
         </label>
         
-        <textarea
-          id="resultado"
-          value={value}
-          readOnly
-          className="w-full p-3 text-base text-gray-900 bg-gray-200 border border-gray-300 rounded-lg shadow-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white focus:outline-none h-[80%]"
-        />
+        {value === null ? (
+          <div className="w-full p-3 text-base text-red-600 bg-red-200 border border-red-300 rounded-lg shadow-sm">
+            Error en la operación de cifrado/descifrado.
+          </div>
+        ) : (
+          <textarea
+            id="resultado"
+            value={value}
+            readOnly
+            className="w-full p-3 text-base text-gray-900 bg-gray-200 border border-gray-300 rounded-lg shadow-sm dark:bg-gray-700 dark:border-gray-600 dark:text-white focus:outline-none h-[80%]"
+          />
+        )}
         
         <div
-          className={`absolute top-12 right-4 cursor-pointer ${value.trim() === '' ? 'text-gray-400' : 'text-blue-500'}`}
+          className={`absolute top-12 right-4 cursor-pointer ${value ? 'text-blue-500' : 'text-gray-400'}`}
           onClick={handleCopy}
         >
-          <FaCopy size={20} />
+          <FaCopy size={20} style={{ pointerEvents: value ? 'auto' : 'none' }} />
         </div>
 
         {showPopup && (

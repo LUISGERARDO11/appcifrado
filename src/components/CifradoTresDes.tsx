@@ -15,6 +15,11 @@ const CifradoTresDes: React.FC = () => {
   const [result, setResult] = useState('');
   const [combinedError, setCombinedError] = useState('');
 
+  // Obtener todas las claves combinadas
+  const getFullKey = useCallback((): string => {
+    return `${clave1}${clave2}${clave3}`;
+  }, [clave1, clave2, clave3]);
+
   // Validar claves y longitudes
   const validateKeysAndLength = useCallback((): string => {
     let errorMessage = '';
@@ -41,10 +46,7 @@ const CifradoTresDes: React.FC = () => {
     }
 
     return errorMessage;
-  }, [clave1, clave2, clave3]);
-
-  // Obtener todas las claves combinadas
-  const getFullKey = (): string => `${clave1}${clave2}${clave3}`;
+  }, [getFullKey]);
 
   // Simulación del cifrado y descifrado para 3DES usando tres claves
   const handleSubmit = () => {

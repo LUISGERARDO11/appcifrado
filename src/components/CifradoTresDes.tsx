@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,useCallback } from 'react';
 import Switch from './comun/switch';
 import Textarea from './comun/TextAreaS';
 import BotonSubmit from './comun/BotonSubmit ';
@@ -16,7 +16,7 @@ const CifradoTresDes: React.FC = () => {
   const [combinedError, setCombinedError] = useState('');
 
   // Validar claves y longitudes
-  const validateKeysAndLength = (): string => {
+  const validateKeysAndLength = useCallback((): string => {
     let errorMessage = '';
 
     if (clave1 && clave2 && clave1 === clave2) {
@@ -41,7 +41,7 @@ const CifradoTresDes: React.FC = () => {
     }
 
     return errorMessage;
-  };
+  }, [clave1, clave2, clave3]);
 
   // Obtener todas las claves combinadas
   const getFullKey = (): string => `${clave1}${clave2}${clave3}`;
@@ -101,10 +101,9 @@ const CifradoTresDes: React.FC = () => {
   const areKeysEmpty = clave1.trim().length === 0 || clave2.trim().length === 0 || clave3.trim().length === 0;
 
   useEffect(() => {
-    // Combinar las validaciones de claves y longitud en un solo mensaje
     const errorMessage = validateKeysAndLength();
     setCombinedError(errorMessage);
-  }, [clave1, clave2, clave3]);
+  }, [validateKeysAndLength]);
 
   return (
     <div className="bg-white py-4 dark:bg-[#0a0e1a] min-h-screen flex justify-center items-center">

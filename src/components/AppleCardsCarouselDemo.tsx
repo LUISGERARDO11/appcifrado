@@ -5,7 +5,7 @@ import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 
 export function AppleCardsCarouselDemo() {
     const cards = data.map((card, index) => (
-        <Card key={card.src} card={card} index={index} layout={false} link={card.link} />
+        <Card key={card.src} card={card} index={index} layout={false} />
       ));
       
 
@@ -25,7 +25,8 @@ const DummyContent = () => {
         className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4"
       >
         <p className="text-neutral-600 my-4 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
-          El cifrado César es uno de los métodos de cifrado por sustitución más antiguos, utilizado por Julio César para enviar mensajes confidenciales a sus generales. Consiste en desplazar cada letra del texto original un número fijo de posiciones en el alfabeto. Por ejemplo, si usamos un desplazamiento de 3, la letra "A" se convierte en "D", "B" en "E" y así sucesivamente.
+          El cifrado César es uno de los métodos de cifrado por sustitución más antiguos, utilizado por Julio César para enviar mensajes confidenciales a sus generales. Consiste en desplazar cada letra del texto original un número fijo de posiciones en el alfabeto.
+          "Por ejemplo, si usamos un desplazamiento de 3, la letra &quot;A&quot; se convierte en &quot;D&quot;, &quot;B&quot; en &quot;E&quot; y así sucesivamente."
         </p>
         <Image
           src="/imgcesar1.png"

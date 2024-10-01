@@ -157,12 +157,10 @@ export const Card = ({
   card,
   index,
   layout = false,
-  link,
 }: {
   card: Card;
   index: number;
   layout?: boolean;
-  link: string;
 }) => {
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);

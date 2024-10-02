@@ -5,15 +5,16 @@ import { WobbleCard } from "./ui/wobble-card";
 import { Dialog } from "@headlessui/react";
 import CifradoCesar from "./CifradoCesar";
 import CifradoEscitala from "./CifradoEscitala";
-import CifradoTresDes from "./CifradoTresDes"; // Importar componente de 3DES
+import CifradoTresDes from "./CifradoTresDes";
+import CifradoECC from "./CifradoECC";
 import CifradoHash from "./CifradoHash";
 import { FaTimes } from 'react-icons/fa';
 
 export function WobbleCardDemo() {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeCipher, setActiveCipher] = useState<"cesar" | "escitala" | "tresdes" | "hash" | null>(null); // Añadir tresdes
+  const [activeCipher, setActiveCipher] = useState<"cesar" | "escitala" | "tresdes" | "hash" | "ecc" |null>(null); // Añadir tresdes
 
-  const openModal = (cipher: "cesar" | "escitala" | "tresdes" | "hash") => { // Añadir tresdes
+  const openModal = (cipher: "cesar" | "escitala" | "tresdes" | "hash" |"ecc") => { 
     setActiveCipher(cipher);
     setIsOpen(true);
   };
@@ -105,7 +106,29 @@ export function WobbleCardDemo() {
             </button>
           </div>
         </WobbleCard>
-
+        <WobbleCard containerClassName="col-span-1 lg:col-span-2 h-full bg-pink-800 min-h-[500px] lg:min-h-[300px]">
+          <div className="max-w-xs">
+            <h2 className="text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
+              Cifrado ECC
+            </h2>
+            <p className="mt-4 text-left text-base/6 text-neutral-200">
+              Un cifrado por sustitución simple que desplaza las letras del alfabeto.
+            </p>
+            <button
+              className="mt-6 bg-white text-black px-6 rounded cursor-pointer py-2 relative z-10"
+              onClick={() => openModal("ecc")}
+            >
+              Probar ahora
+            </button>
+          </div>
+          <Image
+            src="https://plus.unsplash.com/premium_photo-1681487746049-c39357159f69?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            width={500}
+            height={500}
+            alt="Cifrado César"
+            className="absolute -right-4 -bottom-5 md:-bottom-10 object-contain rounded-2xl"
+          />
+        </WobbleCard>
       </div>
       <Dialog open={isOpen} onClose={closeModal} className="relative z-50">
         {/* Overlay con efecto de desenfoque */}
@@ -127,6 +150,7 @@ export function WobbleCardDemo() {
               {activeCipher === "escitala" && <CifradoEscitala />}
               {activeCipher === "tresdes" && <CifradoTresDes />} 
               {activeCipher === "hash" && <CifradoHash />}
+              {activeCipher === "ecc" && <CifradoECC />}
             </Dialog.Description>
           </Dialog.Panel>
         </div>

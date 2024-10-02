@@ -25,3 +25,42 @@ body {
     text-wrap: balance;
   }
 }
+
+/* Estilos para WebKit (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 12px; /* Ancho de la barra de scroll */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color del track de la barra */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color de la barra */
+  border-radius: 10px; /* Bordes redondeados */
+  border: 3px solid transparent; /* Espaciado */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Color cuando se pasa el ratón */
+}
+
+/* Estilos para Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+
+/* Estilos para modo oscuro */
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-track {
+    background: #333;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #555;
+  }
+
+  * {
+    scrollbar-color: #555 #333;
+  }
+}

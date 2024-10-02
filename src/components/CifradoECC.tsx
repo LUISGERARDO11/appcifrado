@@ -137,7 +137,7 @@ const CifradoECC: React.FC = () => {
       </div>
   
       {/* Descripción */}
-      <div className="p-5 my-4 bg-blue-100 text-black dark:bg-blue-800 md:dark:bg-blue-950 rounded-md text-center dark:text-neutral-200 w-full">
+      <div className="p-4 m-6 bg-blue-100 dark:bg-black md:dark:bg-black rounded-md text-center dark:text-neutral-200 relative z-10 w-full">
         <p>
           ¡Descubre el cifrado asimétrico! Primero, genera las claves de Clara, luego las de Daniel. 
           Cifra el mensaje y descífralo.

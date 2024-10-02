@@ -64,7 +64,7 @@ const CifradoEscitala = () => {
           Cifrado Escítala
         </div>
 
-        <div className="p-4 bg-blue-100 dark:bg-blue-800 md:dark:bg-blue-950 rounded-md text-center dark:text-neutral-200">
+        <div className="p-4 bg-blue-100 dark:bg-black md:dark:bg-black rounded-md text-center dark:text-neutral-200 relative z-10 w-full">
           <p>
             Selecciona si deseas cifrar o descifrar el mensaje. Luego ingresa tu mensaje y número de columnas.
           </p>

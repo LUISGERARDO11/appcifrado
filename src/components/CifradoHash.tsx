@@ -40,7 +40,7 @@ const CifradoHash: React.FC = () => {
         <div className="font-extralight text-center text-2xl md:text-4xl dark:text-neutral-200 py-4">
            Hash con SHA-2 (Secure Hash Algorithm 2)
         </div>
-        <div className="p-4 bg-blue-100 dark:bg-blue-800 md:dark:bg-blue-950 rounded-md text-center dark:text-neutral-200 relative z-10 w-full">
+        <div className="p-4 bg-blue-100 dark:bg-black md:dark:bg-black rounded-md text-center dark:text-neutral-200 relative z-10 w-full">
           <p>
             Escribe tu mensaje. Selecciona una variante de SHA-2 y genera el hash
           </p>

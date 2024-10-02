@@ -19,7 +19,7 @@ export function AppleCardsCarouselDemo() {
   );
 }
 
-const DummyContent = () => {
+  const DummyContent = () => {
     return (
       <div
         className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4"
@@ -59,7 +59,6 @@ const DummyContent = () => {
     );
   };
   
-  
   const DummyContent2 = () => {
     return (
       <div className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4">
@@ -96,8 +95,6 @@ const DummyContent = () => {
       </div>
     );
   };
-  
-
 
 const DummyContent3 = () => { 
     return (
@@ -145,7 +142,6 @@ const DummyContent3 = () => {
     );
   };
   
-
   const DummyContent4 = () => {
     return (
       <div
@@ -204,8 +200,75 @@ const DummyContent3 = () => {
     );
   };
   
-  
-const data = [
+  const DummyContent5 = () => {
+    return (
+      <div
+        className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4"
+      >
+        <p className="text-neutral-600 my-4 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
+          <strong>¿Qué es ECC (Criptografía de Curva Elíptica)?</strong>
+        </p>
+        <p className="text-neutral-600 my-4 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
+          La Criptografía de Curva Elíptica (ECC) es un tipo de criptografía asimétrica. Esto significa que utiliza 
+          dos claves diferentes: una clave <strong>pública</strong> para cifrar datos y una clave <strong>privada</strong> para descifrarlos. 
+          Es ampliamente utilizada en aplicaciones modernas por su alta seguridad con tamaños de clave más pequeños 
+          en comparación con otros métodos como RSA.
+        </p>
+
+        <p className="text-neutral-600 my-4 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
+          <strong>¿Cómo funciona?</strong>
+        </p>
+        <p className="text-neutral-600 my-4 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
+          ECC utiliza ecuaciones matemáticas basadas en curvas elípticas para generar las claves. 
+          Estas curvas son formas especiales en un plano que permiten realizar operaciones matemáticas de forma eficiente 
+          para cifrar y descifrar información.
+        </p>
+
+        <p className="text-neutral-600 my-4 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
+          <strong>¿Por qué usar ECC?</strong>
+          <ul className="list-disc list-inside">
+            <li>Tamaño de clave más pequeño: ECC puede ofrecer el mismo nivel de seguridad que RSA con claves mucho más pequeñas, lo que lo hace ideal para dispositivos con recursos limitados.</li>
+            <li>Seguridad robusta: A pesar de las claves más pequeñas, ECC es altamente seguro y difícil de romper.</li>
+            <li>Rendimiento eficiente: Los cálculos de ECC son más rápidos y requieren menos energía, lo que es útil para aplicaciones móviles o dispositivos de IoT.</li>
+          </ul>
+        </p>
+
+        <p className="text-neutral-600 my-4 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
+          <strong>Ejemplo simple de cifrado y descifrado con ECC:</strong>
+        </p>
+        <p className="text-neutral-600 my-4 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
+          1.<strong>Generación de claves</strong>: El receptor crea una clave privada (un número secreto) y una clave pública (un punto en la curva generado a partir de la clave privada).
+          <br />
+          2.<strong>Cifrado</strong>: El emisor usa la clave pública del receptor para cifrar un mensaje.
+          <br />
+          3.<strong>Descifrado</strong>Descifrado: El receptor usa su clave privada para descifrar el mensaje y recuperar el texto original.
+        </p>
+        <Image
+          src="/imgecc1.png"
+          alt="Diagrama de ECC"
+          height="1000"
+          width="1000"
+          className="md:w-3/4 md:h-3/4 h-full w-full mx-auto object-contain mt-8"
+        />
+
+        <p className="text-neutral-600 my-4 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
+          Al igual que otros métodos asimétricos, ECC es ideal para proteger la confidencialidad de los datos en aplicaciones donde se requiere alto rendimiento y seguridad, como en correos electrónicos cifrados o transferencias bancarias.
+        </p>
+
+       
+        
+        <Image
+          src="/imgecc2.png"
+          alt="Proceso de cifrado ECC"
+          height="1000"
+          width="1000"
+          className="md:w-3/4 md:h-3/4 h-full w-full mx-auto object-contain mt-8"
+        />
+      </div>
+    );
+  };
+
+  const data = [
     {
       category: "Basado en el desplazamiento de letras.",
       title: "Cifrado César",
@@ -228,7 +291,14 @@ const data = [
       link: "#",
     },
     {
-      category: "familia de funciones hash criptográficas",
+      category: "Basada en las propiedades algebraicas de las curvas elípticas",
+      title: "Cifrado ECC (Elliptic Curve Cryptography)",
+      src: "https://plus.unsplash.com/premium_photo-1671083083167-c3f99da310ef?q=80&w=2454&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      content: <DummyContent5 />,
+      link: "#", 
+    },
+    {
+      category: "Familia de funciones hash criptográficas",
       title: "SHA-2 (Secure Hash Algorithm 2)",
       src: "https://plus.unsplash.com/premium_photo-1683936164504-79916cb7ce2c?q=80&w=2584&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       content: <DummyContent4 />,

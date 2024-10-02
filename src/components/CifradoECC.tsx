@@ -129,22 +129,25 @@ const CifradoECC: React.FC = () => {
       console.error('Error al descifrar el mensaje:', error);
     }
   };
-
   return (
     <div className="flex flex-col items-center w-full">
-      <div className="font-extralight text-center text-2xl md:text-4xl dark:text-neutral-200 py-4">
+      {/* Título */}
+      <div className="font-extralight text-center text-2xl md:text-4xl text-black dark:text-neutral-200 py-4">
         Cifrado ECC (Criptografía de Curva Elíptica)
       </div>
-      <div className="p-5 my-4 bg-blue-100 dark:bg-blue-800 md:dark:bg-blue-950 rounded-md text-center dark:text-neutral-200 w-full">
+  
+      {/* Descripción */}
+      <div className="p-5 my-4 bg-blue-100 text-black dark:bg-blue-800 md:dark:bg-blue-950 rounded-md text-center dark:text-neutral-200 w-full">
         <p>
           ¡Descubre el cifrado asimétrico! Primero, genera las claves de Clara, luego las de Daniel. 
           Cifra el mensaje y descífralo.
         </p>
       </div>
   
+      {/* Contenedor principal */}
       <div className="flex flex-col lg:flex-row lg:space-x-4 w-full">
         {/* Máquina de Clara */}
-        <div className="w-full lg:w-1/3 bg-gray-900 p-4 rounded-lg shadow-md mb-4 lg:mb-0">
+        <div className="w-full lg:w-1/3 bg-white text-black dark:bg-gray-900 dark:text-neutral-200 p-4 rounded-lg shadow-md mb-4 lg:mb-0">
           <h3 className="font-bold text-lg mb-6 text-center">Máquina de Clara</h3>
           <button
             onClick={generateClaraKeys}
@@ -169,14 +172,14 @@ const CifradoECC: React.FC = () => {
         </div>
   
         {/* Comunicación */}
-        <div className="w-full lg:w-1/3 bg-gray-900 p-4 rounded-lg shadow-md mb-6 lg:mb-0">
+        <div className="w-full lg:w-1/3 bg-white text-black dark:bg-gray-900 dark:text-neutral-200 p-4 rounded-lg shadow-md mb-6 lg:mb-0">
           <h3 className="font-bold text-lg mb-4 text-center">Comunicación</h3>
           <p className="break-words mb-5"><strong>Clave pública de Clara:</strong> {ClaraPublicKey}</p>
           <p className="break-words mt-4"><strong>Mensaje cifrado de Daniel:</strong> {encryptedMessage}</p>
         </div>
   
         {/* Máquina de Daniel */}
-        <div className="w-full lg:w-1/3 bg-gray-900 p-4 rounded-lg shadow-md">
+        <div className="w-full lg:w-1/3 bg-white text-black dark:bg-gray-900 dark:text-neutral-200 p-4 rounded-lg shadow-md">
           <h3 className="font-bold text-lg mb-6 text-center">Máquina de Daniel</h3>
           <button
             onClick={generateDanielPrivateKey}
@@ -188,7 +191,7 @@ const CifradoECC: React.FC = () => {
             value={DanielMessage}
             onChange={(e) => setDanielMessage(e.target.value)}
             placeholder="Escribe el mensaje de Daniel"
-            className="w-full p-2 border border-gray-600 bg-gray-700 text-gray-200 rounded-lg mb-4"
+            className="w-full p-2 border border-gray-300 text-black dark:border-gray-600 dark:bg-gray-700 dark:text-gray-200 rounded-lg mb-4"
           />
           <button
             onClick={encryptMessageForClara}
@@ -201,7 +204,7 @@ const CifradoECC: React.FC = () => {
       </div>
     </div>
   );
-  
+    
 };
 
 export default CifradoECC;

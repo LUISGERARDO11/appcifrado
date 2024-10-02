@@ -73,7 +73,7 @@ export function WobbleCardDemo() {
               3DES
             </h2>
             <p className="mt-4 text-left text-base/6 text-neutral-200">
-              Emplea tres claves para realizar múltiples operaciones de cifrado y descifrado
+              Un cifrado simétrico que emplea tres claves para realizar múltiples operaciones de cifrado y descifrado
             </p>
             <button
               className="mt-6 bg-white text-black px-6 rounded cursor-pointer py-2 relative z-10"
@@ -90,7 +90,7 @@ export function WobbleCardDemo() {
             className="absolute -right-4 -bottom-5 md:-bottom-10 object-contain rounded-2xl"
           />
         </WobbleCard>
-        <WobbleCard containerClassName="col-span-1 min-h-[300px]">
+        <WobbleCard containerClassName="col-span-1 bg-yellow-700  min-h-[300px]">
           <div className="max-w-xs">
             <h2 className="text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
               Hash con SHA-2
@@ -106,13 +106,13 @@ export function WobbleCardDemo() {
             </button>
           </div>
         </WobbleCard>
-        <WobbleCard containerClassName="col-span-1 lg:col-span-2 h-full bg-pink-800 min-h-[500px] lg:min-h-[300px]">
+        <WobbleCard containerClassName="col-span-1 lg:col-span-2 h-full bg-red-700 min-h-[500px] lg:min-h-[300px]">
           <div className="max-w-xs">
             <h2 className="text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
               Cifrado ECC
             </h2>
             <p className="mt-4 text-left text-base/6 text-neutral-200">
-              Un cifrado por sustitución simple que desplaza las letras del alfabeto.
+              Un cifrado asimétrico con un enfoque avanzado para la criptografía de clave pública basado en las propiedades algebraicas de las curvas elípticas sobre campos finitos. 
             </p>
             <button
               className="mt-6 bg-white text-black px-6 rounded cursor-pointer py-2 relative z-10"
@@ -122,7 +122,7 @@ export function WobbleCardDemo() {
             </button>
           </div>
           <Image
-            src="https://plus.unsplash.com/premium_photo-1681487746049-c39357159f69?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src="https://plus.unsplash.com/premium_photo-1700681802470-64f440b12c74?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             width={500}
             height={500}
             alt="Cifrado César"

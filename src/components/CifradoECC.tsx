@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import elliptic from 'elliptic';
 import crypto from 'crypto';
-import { FaKey, FaLock, FaUnlock, FaEdit } from 'react-icons/fa';
+import { FaKey, FaLock, FaUnlock } from 'react-icons/fa';
 
 
 // Configuramos la curva elíptica
@@ -126,6 +126,7 @@ const CifradoECC: React.FC = () => {
       setDecryptedMessage(decrypted);
     } catch (error) {
       alert('Error al descifrar el mensaje');
+      console.error('Error al descifrar el mensaje:', error);
     }
   };
 

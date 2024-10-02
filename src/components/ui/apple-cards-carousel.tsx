@@ -206,10 +206,10 @@ export const Card = ({
       >
         <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
         <div className="relative z-40 p-4 md:p-8">
-          <motion.p layoutId={layout ? `category-${card.category}` : undefined} className="text-xs md:text-base font-medium font-sans text-left">
+          <motion.p layoutId={layout ? `category-${card.category}` : undefined} className="text-xs md:text-base font-medium font-sans text-left text-white">
             {card.category}
           </motion.p>
-          <motion.p layoutId={layout ? `title-${card.title}` : undefined} className="text-lg md:text-3xl font-semibold max-w-xs text-left [text-wrap:balance] font-sans mt-1 md:mt-2">
+          <motion.p layoutId={layout ? `title-${card.title}` : undefined} className="text-lg text-white md:text-3xl font-semibold max-w-xs text-left [text-wrap:balance] font-sans mt-1 md:mt-2">
             {card.title}
           </motion.p>
         </div>

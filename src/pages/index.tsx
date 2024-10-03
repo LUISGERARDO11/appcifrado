@@ -5,6 +5,7 @@ import { AuroraBackgroundDemo } from '../components/AuroraBackgroundDemo';
 import { AppleCardsCarouselDemo } from '@/components/AppleCardsCarouselDemo';
 import { TextRevealCardPreview } from "@/components/TextRevealCardPreview";
 import { WobbleCardDemo } from '@/components/WobbleCardDemo';
+import CompareFrameworks from "@/components/CompareFrameworks";
 import About from "@/components/About";
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
       <WobbleCardDemo />
       <TextRevealCardPreview/>
       <AppleCardsCarouselDemo />
+      <CompareFrameworks/>
       
       {/* Modal de "Acerca de" */}
       <About isOpen={isAboutOpen} closeModal={closeAboutModal} />

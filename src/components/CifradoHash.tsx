@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Textarea from './comun/TextAreaS'; // Asumo que este es tu componente TextAreaS
-import Resultado from './comun/Resultado'; // Componente de resultado que proporcionaste
-import { hashSHA224, hashSHA256, hashSHA384, hashSHA512 } from '../utils/cifradoHash'; // Importa las funciones de cifrado
+import Textarea from './comun/TextAreaS'; 
+import Resultado from './comun/Resultado';
+import { hashSHA224, hashSHA256, hashSHA384, hashSHA512 } from '../utils/cifradoHash'; // Importacion las funciones de cifrado
 
 const CifradoHash: React.FC = () => {
   const [message, setMessage] = useState(''); // Estado para el mensaje del textarea
